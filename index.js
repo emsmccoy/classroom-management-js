@@ -79,6 +79,11 @@ async function menuOptions() {
                 console.log(`${deletedStudent.name} has been deleted`)
                 break;
 
+            case 5:
+                const random = Math.floor(Math.random() * students.length);
+                const randomStudent = students[random]
+                console.log(`${randomStudent.name} has been deleted`)
+                students.splice(random, 1)
 
 
 
