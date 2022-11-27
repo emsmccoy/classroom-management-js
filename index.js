@@ -153,10 +153,17 @@ async function menuOptions() {
                 students.push(newStudent)
                 console.log(`The following student has been successfully added:`)
                 console.log(newStudent)
-
                 break;
 
             case 11:
+                const youngest = students.reduce(function (min, curr) {
+                    return min.age < curr.age ? min : curr;
+                });
+                console.log(`Youngest student: ${youngest.name}`)
+
+
+
+
 
 
 
