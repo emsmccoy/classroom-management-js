@@ -1,4 +1,3 @@
-import { get } from "https";
 import readline from "readline";
 
 const rl = readline.createInterface({
@@ -14,9 +13,11 @@ function isInt(str) {
 
 
 function getNumberFromConsole() {
-    console.log("options")
+    console.log("1 - Show all the students in a table format. \n2 - Show the number of students in the class by console.\n3 - Show by console all the names of the students.\n4 - Delete the last student in the class.\n5 - Eliminate a student randomly from the class.\n6 - Show by console all the data of the pupils that are girls.\n7 - Show by console the number of boys and girls in the class.\n8 - Show true or false by console if all the students in the class are girls.\n9 - Show by console the names of the students between 20 and 25 years old.\n10 - Add a new student.\n11 - Display by console the name of the youngest person in the class.\n12 - Show by console the average age of all the students in the class.\n13 - Show by console the average age of the girls in the class.\n14 - Add a new grade for the students.\n15 - Sort the array of students alphabetically by name.\n")
+
+
     const promise = new Promise((resolve, reject) => {
-        rl.question("Please, select the number of one of the options above: ", (num) => {
+        rl.question("Please, type the number of one of the options above and press ENTER \nIf you want to exit, press 0 or any number above 18\n     NUMBER OF ACTION:", (num) => {
             rl.pause();
             if (isInt(num)) {
                 num = Number.parseInt(num);
@@ -46,7 +47,7 @@ async function menuOptions() {
         name: 'silvia'
     }]
 
-    const availableMaleNames = ['pepe', 'juan', 'victor', 'Leo', 'francisco', 'carlos'];
+    const availableMaleNames = ['pepe', 'juan', 'victor', 'leo', 'francisco', 'carlos'];
     const availableFemaleNames = ['cecilia', 'ana', 'luisa', 'silvia', 'isabel', 'virginia'];
     const availableGenders = ['male', 'female'];
 
@@ -207,6 +208,8 @@ async function menuOptions() {
                 }
 
                 students.sort(compare);
+                console.log('Students have been sorted out alphabetically.')
+                break;
 
 
 
@@ -214,7 +217,7 @@ async function menuOptions() {
                 console.log('Closing the app...')
 
         }
-        console.log('*****************************************')
+        console.log('***************************************************************')
     } while (numberFromConsole !== 0 && numberFromConsole < 19)
 
 }
