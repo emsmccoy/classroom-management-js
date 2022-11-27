@@ -40,7 +40,7 @@ async function menuOptions() {
         name: 'edu'
     },
     {
-        age: 23,
+        age: 29,
         examScores: [],
         gender: 'female',
         name: 'silvia'
@@ -113,17 +113,23 @@ async function menuOptions() {
                 break;
 
             case 8:
-                if (students.some(student => student.gender === 'male')) {
-                    console.log('False. Not all students are female.')
-                    return false
-                } else {
-                    console.log('True. All students are female.')
-                    return true
+                function allFemales() {
+                    if (students.some(student => student.gender === 'male')) {
+                        console.log('False. Not all students are female.')
+                        return false
+                    } else {
+                        console.log('True. All students are female.')
+                        return true
+                    }
                 }
+                allFemales();
+                break;
+
 
             case 9:
                 const adultStudents = students.filter(student => student.age >= 20 && student.age <= 25).map(m => m.name)
                 console.log(`Students between 20 and 25 years old: ${adultStudents}`)
+                break;
 
             case 10:
                 const newGender = availableGenders[Math.floor(Math.random() * availableGenders.length)]
@@ -144,7 +150,15 @@ async function menuOptions() {
                     gender: newGender,
                     name: getNewName(),
                 }
+                students.push(newStudent)
+                console.log(`The following student has been successfully added:`)
                 console.log(newStudent)
+
+                break;
+
+            case 11:
+
+
 
             default:
                 console.log('Closing the app...')
