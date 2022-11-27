@@ -82,8 +82,21 @@ async function menuOptions() {
             case 5:
                 const random = Math.floor(Math.random() * students.length);
                 const randomStudent = students[random]
-                console.log(`${randomStudent.name} has been deleted`)
+                console.log(`${randomStudent.name} has been randomly deleted`)
                 students.splice(random, 1)
+                break;
+
+            case 6:
+                let females = []
+                console.log('Female students:')
+                for (let student of students) {
+                    if (student.gender === 'female') {
+                        females.push(student)
+                    }
+                }
+                console.table(females)
+                break;
+
 
 
 
