@@ -160,10 +160,35 @@ async function menuOptions() {
                     return min.age < curr.age ? min : curr;
                 });
                 console.log(`Youngest student: ${youngest.name}`)
+                break;
 
+            case 12:
+                let studentsAge = []
+                for (let student of students) {
+                    studentsAge.push(student.age)
+                }
+                const totalAge = studentsAge.reduce(function (total, curr) {
+                    return total + curr;
+                });
+                const avgAge = totalAge / studentsAge.length
+                console.log(`Average age: ${avgAge}`)
+                break;
 
+            case 13:
 
-
+                let femaleAge = []
+                for (let student of students) {
+                    if (student.gender === 'female') {
+                        femaleAge.push(student.age)
+                    }
+                }
+                const totalAgeFem = femaleAge.reduce(function (total, curr) {
+                    return total + curr;
+                });
+                console.log(totalAgeFem)
+                const avgAgeFem = totalAgeFem / femaleAge.length
+                console.log(`Average female age: ${avgAgeFem}`)
+                break;
 
 
 
