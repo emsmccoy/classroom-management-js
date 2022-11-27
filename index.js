@@ -186,7 +186,7 @@ async function menuOptions() {
                 const totalAgeFem = femaleAge.reduce(function (total, curr) {
                     return total + curr;
                 });
-                console.log(totalAgeFem)
+
                 const avgAgeFem = totalAgeFem / femaleAge.length
                 console.log(`Average female age: ${avgAgeFem}`)
                 break;
