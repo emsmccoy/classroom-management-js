@@ -97,6 +97,20 @@ async function menuOptions() {
                 console.table(females)
                 break;
 
+            case 7:
+                let femaleNum = 0
+                let maleNum = 0
+
+                for (let student of students) {
+                    if (student.gender === 'female') {
+                        femaleNum++
+                    } else {
+                        maleNum++
+                    }
+                }
+                console.log(`The number of female students is ${femaleNum}`)
+                console.log(`The number of male students is ${maleNum}`)
+                break;
 
 
 
