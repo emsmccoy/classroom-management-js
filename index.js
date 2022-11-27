@@ -33,18 +33,19 @@ function getNumberFromConsole() {
 async function menuOptions() {
     let numberFromConsole
 
-    const students = [{
-        age: 32,
-        examScores: [],
-        gender: 'male',
-        name: 'edu'
-    },
-    {
-        age: 29,
-        examScores: [],
-        gender: 'female',
-        name: 'silvia'
-    }]
+    const students = [
+        //     {
+        //     age: 32,
+        //     examScores: [],
+        //     gender: 'male',
+        //     name: 'edu'
+        // },
+        {
+            age: 29,
+            examScores: [],
+            gender: 'female',
+            name: 'silvia'
+        }]
 
     const availableMaleNames = ['pepe', 'juan', 'victor', 'Leo', 'francisco', 'carlos'];
     const availableFemaleNames = ['cecilia', 'ana', 'luisa', 'silvia', 'isabel', 'virginia'];
@@ -111,6 +112,15 @@ async function menuOptions() {
                 console.log(`The number of female students is ${femaleNum}`)
                 console.log(`The number of male students is ${maleNum}`)
                 break;
+
+            case 8:
+                if (students.some(student => student.gender === 'male')) {
+                    console.log('False. Not all students are female.')
+                    return false
+                } else {
+                    console.log('True. All students are female.')
+                    return true
+                }
 
 
 
