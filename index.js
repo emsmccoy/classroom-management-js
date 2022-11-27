@@ -33,19 +33,18 @@ function getNumberFromConsole() {
 async function menuOptions() {
     let numberFromConsole
 
-    const students = [
-        //     {
-        //     age: 32,
-        //     examScores: [],
-        //     gender: 'male',
-        //     name: 'edu'
-        // },
-        {
-            age: 29,
-            examScores: [],
-            gender: 'female',
-            name: 'silvia'
-        }]
+    const students = [{
+        age: 32,
+        examScores: [],
+        gender: 'male',
+        name: 'edu'
+    },
+    {
+        age: 23,
+        examScores: [],
+        gender: 'female',
+        name: 'silvia'
+    }]
 
     const availableMaleNames = ['pepe', 'juan', 'victor', 'Leo', 'francisco', 'carlos'];
     const availableFemaleNames = ['cecilia', 'ana', 'luisa', 'silvia', 'isabel', 'virginia'];
@@ -122,7 +121,30 @@ async function menuOptions() {
                     return true
                 }
 
+            case 9:
+                const adultStudents = students.filter(student => student.age >= 20 && student.age <= 25).map(m => m.name)
+                console.log(`Students between 20 and 25 years old: ${adultStudents}`)
 
+            case 10:
+                const newGender = availableGenders[Math.floor(Math.random() * availableGenders.length)]
+
+                function getNewName() {
+                    let newName
+                    if (newGender === 'male') {
+                        newName = availableMaleNames[Math.floor(Math.random() * availableMaleNames.length)]
+                    } else {
+                        newName = availableFemaleNames[Math.floor(Math.random() * availableFemaleNames.length)]
+                    }
+                    return newName
+                }
+
+                let newStudent = {
+                    age: Math.floor(Math.random() * (50 - 20 + 1) + 20),
+                    examScores: [],
+                    gender: newGender,
+                    name: getNewName(),
+                }
+                console.log(newStudent)
 
             default:
                 console.log('Closing the app...')
