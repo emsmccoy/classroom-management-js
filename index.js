@@ -190,6 +190,24 @@ async function menuOptions() {
                 console.log(`Average female age: ${avgAgeFem}`)
                 break;
 
+            case 14:
+                students.forEach(student => student.examScores.push(Math.round(Math.random() * 10)))
+                console.log('Scores added.')
+                break;
+
+            case 15:
+                function compare(a, b) {
+                    if (a.name < b.name) {
+                        return -1;
+                    }
+                    if (a.name > b.name) {
+                        return 1;
+                    }
+                    return 0;
+                }
+
+                students.sort(compare);
+
 
 
             default:
