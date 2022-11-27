@@ -75,6 +75,9 @@ async function menuOptions() {
                 break;
 
             case 4:
+                const deletedStudent = students.pop()
+                console.log(`${deletedStudent.name} has been deleted`)
+                break;
 
 
 
